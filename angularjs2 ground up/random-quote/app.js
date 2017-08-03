@@ -12,6 +12,20 @@
         getRandomQuote: function () {  
             var random = Math.floor(Math.random() * this.quotes.length);
             return this.quotes[random];
+        },
+        generateRandomQuotes: function (delay, callback) {  
+          var self = this;
+          
+        }
+    })
+
+    var MockQuoteService = Class({
+        constructor: function () {  },
+        getRandomQuote: function () {  
+          return {
+            line: 'A mock quote',
+            author: 'Authors'
+          };
         }
     })
 
@@ -20,8 +34,8 @@
         template: '<p><em>{{quote.line}}</em> - {{quote.author}}</p>'
     })
     .Class({
-        constructor: [QuoteService, function RandomQuoteComponent(quoteService) {      
-            this.quote = quoteService.getRandomQuote();
+        constructor: [QuoteService, function RandomQuoteComponent(QuoteService) {      
+            this.quote = QuoteService.getRandomQuote();
         }]
     });
 
@@ -37,7 +51,9 @@
     var AppModule = NgModule({
         imports: [BrowserModule],
         declarations: [AppComp, RandomQuoteComponent],
-        providers: [QuoteService],
+        providers: [{
+          provide: QuoteService, useClass: MockQuoteService
+        }],
         bootstrap: [AppComp]
     })
     .Class({
