@@ -1,11 +1,7 @@
-(function () {
+(function (app) {
     var Class = ng.core.Class;
-    var Component = ng.core.Component;
-    var NgModule = ng.core.NgModule;
-    var BrowserModule = ng.platformBrowser.BrowserModule;
-    var platformBrowserDynamic = ng.platformBrowserDynamic.platformBrowserDynamic;
 
-    var QuoteService = Class({
+    app.QuoteService = Class({
         constructor: function QuoteService() {  
             this.quotes = quotes;
         },
@@ -15,52 +11,12 @@
         },
         generateRandomQuotes: function (delay, callback) {  
           var self = this;
-          
+          callback(this.getRandomQuote());
+          setInterval(function () {  
+            callback(self.getRandomQuote());
+          }, delay);
         }
     })
-
-    var MockQuoteService = Class({
-        constructor: function () {  },
-        getRandomQuote: function () {  
-          return {
-            line: 'A mock quote',
-            author: 'Authors'
-          };
-        }
-    })
-
-    var RandomQuoteComponent = Component({
-        selector: 'random-quote',
-        template: '<p><em>{{quote.line}}</em> - {{quote.author}}</p>'
-    })
-    .Class({
-        constructor: [QuoteService, function RandomQuoteComponent(QuoteService) {      
-            this.quote = QuoteService.getRandomQuote();
-        }]
-    });
-
-    var AppComp = Component({
-        selector: 'my-app',
-        template: '<p>JoinsAngulars</p>'+
-                    '<random-quote></random-quote>'
-    })
-    .Class({
-        constructor: function() {}
-    });
-
-    var AppModule = NgModule({
-        imports: [BrowserModule],
-        declarations: [AppComp, RandomQuoteComponent],
-        providers: [{
-          provide: QuoteService, useClass: MockQuoteService
-        }],
-        bootstrap: [AppComp]
-    })
-    .Class({
-        constructor: function () {  }
-    });
-
-    platformBrowserDynamic().bootstrapModule(AppModule);
 
     var quotes = [
     {
@@ -104,4 +60,4 @@
       "author": "Tom Cargill"
     }
   ];
-})();
+})(window.app || (window.app = {}));
