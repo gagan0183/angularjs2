@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from './app';
 
 @Component({
   selector: 'inventory-app',
@@ -22,7 +23,7 @@ export class InventoryappComponent implements OnInit {
       '/resources/images/products/black-shoes.jpg',
       ['Men', 'Shoes', 'Running shoes'],
       90);
-    let product3 = new Product( 
+    let product3 = new Product(
       'NEATO',
       'Blue',
       '/resources/images/products/black-tape.jpg',
