@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { InventoryappComponent } from './inventoryapp/inventoryapp.component';
 import { ProductsListComponent } from './products-list/products-list.component';
+import { ProductRowComponent } from './product-row/product-row.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InventoryappComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    ProductRowComponent
   ],
   imports: [
     BrowserModule
