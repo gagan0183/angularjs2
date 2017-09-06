@@ -30,7 +30,7 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                 core_1.Component({
                     selector: 'app',
                     templateUrl: './partials/app.html',
-                    styles: [".btn {background-color: green;}"]
+                    styleUrls: ['css/artist-item.css']
                 }), 
                 __metadata('design:paramtypes', [])
             ], AppComponent);
