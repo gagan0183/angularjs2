@@ -10,10 +10,10 @@ export class AppComponent {
 
   onClick(e) {
     console.log(e);
+    this.name = e.target.innerHTML;
   }
 
   constructor() {
-    this.name = 'Names';
     this.artists = [
       {
         name: 'Barot Bellingham',
@@ -28,5 +28,16 @@ export class AppComponent {
         school: 'c'
       }
     ]
+  }
+
+  addArtist(value) {
+    if (value != '') {
+      this.artists.push({
+        {
+          name: value,
+          school: 'School'
+        }
+      });
+    }
   }
 }

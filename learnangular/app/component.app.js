@@ -20,7 +20,6 @@ System.register(['@angular/core'], function(exports_1, context_1) {
         execute: function() {
             AppComponent = class AppComponent {
                 constructor() {
-                    this.name = 'Names';
                     this.artists = [
                         {
                             name: 'Barot Bellingham',
@@ -38,6 +37,16 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                 }
                 onClick(e) {
                     console.log(e);
+                    this.name = e.target.innerHTML;
+                }
+                addArtist(value) {
+                    if (value != '') {
+                        this.artists.push({}, {
+                            name: value,
+                            school: 'School'
+                        });
+                    }
+                    ;
                 }
             };
             AppComponent = __decorate([
