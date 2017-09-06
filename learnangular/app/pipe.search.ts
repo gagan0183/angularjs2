@@ -9,6 +9,7 @@ export class SearchPipe implements PipeTransform {
     console.log("pipeData : " + JSON.stringify(pipeData));
     return pipeData.filter((eachItem) => {
       return eachItem['name'].includes(pipeModifier);
+      
     })
   }
 }
