@@ -1,7 +1,7 @@
 <div class="card search">
   <h1 class="search-headline">Artist directory</h1>
   <label class="search-label">search <span *ngIf="name" [innerHTML] = "name"></span></label>
-  <input class="search-input" #newArtist>
+  <input class="search-input" #newArtist [(ngModel)]="name">
   <button class="btn"
     (click)="addArtist(newArtist.value); newArtist.value = ''">Add Artist
   </button>

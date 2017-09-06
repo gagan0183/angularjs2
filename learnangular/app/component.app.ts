@@ -14,6 +14,7 @@ export class AppComponent {
   }
 
   constructor() {
+    this.name = 'name';
     this.artists = [
       {
         name: 'Barot Bellingham',

@@ -20,6 +20,7 @@ System.register(['@angular/core'], function(exports_1, context_1) {
         execute: function() {
             AppComponent = class AppComponent {
                 constructor() {
+                    this.name = 'name';
                     this.artists = [
                         {
                             name: 'Barot Bellingham',
