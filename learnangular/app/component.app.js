@@ -35,9 +35,9 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                         }
                     ];
                 }
-                onClick(e) {
-                    console.log(e);
-                    this.name = e.target.innerHTML;
+                onClick(item, artistContainer) {
+                    this.name = item.name;
+                    artistContainer.style.backgroundColor = '#FECE4E';
                 }
                 addArtist(value) {
                     if (value != '') {

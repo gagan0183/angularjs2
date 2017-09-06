@@ -8,9 +8,9 @@ export class AppComponent {
   name: string;
   artists: any;
 
-  onClick(e) {
-    console.log(e);
-    this.name = e.target.innerHTML;
+  onClick(item, artistContainer) {
+    this.name = item.name;
+    artistContainer.style.backgroundColor = '#FECE4E';
   }
 
   constructor() {
