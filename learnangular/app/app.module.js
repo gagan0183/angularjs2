@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/platform-browser', '@angular/forms', './component.app', './component.artist.item'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/platform-browser', '@angular/forms', './component.app', './component.artist.item', './pipe.search'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, platform_browser_1, forms_1, component_app_1, component_artist_item_1;
+    var core_1, platform_browser_1, forms_1, component_app_1, component_artist_item_1, pipe_search_1;
     var AppModule;
     return {
         setters:[
@@ -28,6 +28,9 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
             },
             function (component_artist_item_1_1) {
                 component_artist_item_1 = component_artist_item_1_1;
+            },
+            function (pipe_search_1_1) {
+                pipe_search_1 = pipe_search_1_1;
             }],
         execute: function() {
             AppModule = class AppModule {
@@ -35,7 +38,7 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
             AppModule = __decorate([
                 core_1.NgModule({
                     imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-                    declarations: [component_app_1.AppComponent, component_artist_item_1.ArtistItemComponent],
+                    declarations: [component_app_1.AppComponent, component_artist_item_1.ArtistItemComponent, pipe_search_1.SearchPipe],
                     bootstrap: [component_app_1.AppComponent]
                 }), 
                 __metadata('design:paramtypes', [])

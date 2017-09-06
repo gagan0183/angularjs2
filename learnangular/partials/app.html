@@ -5,7 +5,7 @@
 </div>
 
 <ul class="artistlist cf">
-  <li class="artistlist-item cf" *ngFor="let item of artists" #artistContainer>
+  <li class="artistlist-item cf" *ngFor="let item of (artists | search: query)" #artistContainer>
     <artist-item class="content" [artist]=item></artist-item>
   </li>
 </ul>
