@@ -12,7 +12,7 @@ export class AppComponent {
     medium: 'Series',
     category: 'Science fiction',
     year: 2000,
-    watchedOn: 129410,
+    watchedOn: null,
     isFavorite: true
   };
 
