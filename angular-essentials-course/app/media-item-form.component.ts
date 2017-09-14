@@ -34,7 +34,10 @@ export class MediaItemFormComponent {
     if(control.value >= minvalue && control.value <= maxvalue) {
       return null;
     } else {
-      return { 'year' : control.value};
+      return { 'year' : {
+        min: minvalue,
+        max: maxvalue
+      }};
     }
   }
 }
